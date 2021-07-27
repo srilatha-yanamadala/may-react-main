@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+    <style>
+        article{
+            width: 250px;
+            background-color: darkgray;
+            float: left;
+            margin: 10px;
+        }
+        article h1{
+            margin: 0px;
+            background-color: darkslategray;
+            color: floralwhite;
+            text-align: center;
+        }
+        article div{
+            margin: 0px;
+            background-color: silver;
+            color: #4c4c4c;
+            padding: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+     let herolist = [
+         { 
+             title : "Batman",
+             firstName : "Bruce",
+             lastName : "Wayne",
+             power : 7,
+             city : "Gotham"
+         },
+         { 
+             title : "Superman",
+             firstName : "Clark",
+             lastName : "Kent",
+             power : 10,
+             city : "Metropolis"
+         },
+         { 
+             title : "Wonder Women",
+             firstName : "Princess",
+             lastName : "Diana",
+             power : 8,
+             city : "Amazon"
+         },
+         { 
+             title : "Spiderman",
+             firstName : "Peter",
+             lastName : "Parker",
+             power : 6,
+             city : "New York"
+         },
+         ];
+
+         document.addEventListener("DOMContentLoaded", function(){
+            herolist.forEach((val)=>{
+                // document.querySelector("section").innerHTML += "<article><h1>"+val.title+"</h1><div>Power is : "+val.power+"</div><div>From : "+val.city+"</div></article>";
+                document.querySelector("section").innerHTML += `
+                <article>
+                    <h1>${ val.title.toUpperCase() }</h1>
+                    <div>First Name : ${ val.firstName }</div>
+                    <div>Last Name : ${ val.lastName }</div>
+                    <div>Power is : ${ val.power * 2 }</div>
+                    <div>From : ${val.city }</div>
+                </article>
+                `;
+            })
+         })
+
+    </script>
+</head>
+<body>
+    <section></section>
+</body>
+</html>

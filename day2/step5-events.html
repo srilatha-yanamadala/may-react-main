@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    // console.log( document.getElementsByTagName("button") );
+    document.getElementsByTagName("button")[0].addEventListener("click",clickHandler1);
+    document.getElementsByTagName("button")[1].addEventListener("click",clickHandler2);
+    document.getElementsByTagName("button")[2].addEventListener("click",clickHandler3);
+    document.getElementsByTagName("button")[3].addEventListener("click",clickHandler4);
+    document.getElementsByTagName("button")[4].addEventListener("click",clickHandler5);
+});
+function clickHandler1(){
+    alert("you clicked the first button");
+}
+function clickHandler2(){
+    alert("you clicked the second button");
+}
+function clickHandler3(){
+    alert("you clicked the third button");
+}
+function clickHandler4(){
+    alert("you clicked the fourth button");
+}
+function clickHandler5(){
+    alert("you clicked the fifth button");
+}
+</script>
+</head>
+<body>
+    <!-- button{ Click Me $ }*5  -->
+    <button> Click Me 1 </button>
+    <button> Click Me 2 </button>
+    <button> Click Me 3 </button>
+    <button> Click Me 4 </button>
+    <button> Click Me 5 </button> 
+</body>
+</html>

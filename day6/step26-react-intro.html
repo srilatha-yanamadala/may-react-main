@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border : 2px solid red;
+        }
+    </style>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" ></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" ></script>
+    <script>
+/*      
+        let ulist = document.createElement("ul");
+        let listItem1 = document.createElement("li");
+            listItem1.textContent = "List Item 1";
+            ulist.appendChild(listItem1);
+        let listItem2 = document.createElement("li");
+            listItem2.textContent = "List Item 2";
+            ulist.appendChild(listItem2);
+        let listItem3 = document.createElement("li");
+            listItem3.textContent = "List Item 6";
+            ulist.appendChild(listItem3);
+        let listItem4 = document.createElement("li");
+            listItem4.textContent = "List Item 4";
+            ulist.appendChild(listItem4);
+        let listItem5 = document.createElement("li");
+            listItem5.textContent = "List Item 5";
+            ulist.appendChild(listItem5);
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("root").appendChild(ulist);
+        }); 
+*/
+            let arr = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5'];
+            let listArr = arr.map(function(val, idx){
+                return React.createElement("li", { key : idx }, val);
+            });
+            let ulist = React.createElement("ul", {class : 'box'}, listArr);
+            /* let ulist = React.createElement("ul",null, 
+                React.createElement("li", null, "List Item 1"),
+                React.createElement("li", null, "List Item 2"),
+                React.createElement("li", null, "List Item 3"),
+                React.createElement("li", null, "List Item 4"),
+                React.createElement("li", null, "List Item 5")
+            ); */
+            document.addEventListener("DOMContentLoaded", function(){
+                // document.getElementById("root").appendChild(ulist);
+                ReactDOM.render(ulist,document.querySelector("#root"));
+            })
+    </script>
+</head>
+<body>
+    <div id="root">1</div>
+</body>
+</html>

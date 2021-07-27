@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        /* class Human{
+            constructor(){
+                this.age = 20;
+            }
+        }
+        class Person extends Human{
+            constructor(ncity){
+                super();
+                this.city = ncity;
+            }
+        };
+        class Hero extends Person{
+            constructor(fname, lname, city){
+                super(city);
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+        };
+        let hero = new Hero("Bruce", "Wayne", "Gotham");
+        console.log(hero.firstname, hero.lastname, hero.city, hero.age); */
+
+        class Human{
+            age = 20;
+        }
+        class Person extends Human{
+            city = "default";
+            constructor(ncity){
+                super();
+                // this.city = ncity;
+            }
+        };
+        class Hero extends Person{
+            static version = 101;
+            _power = 0;
+            constructor(fname, lname, city){
+                super(city);
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+            get power(){
+                return this._power;
+            }
+            set power(npower){
+                this._power = npower;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+        };
+        // Hero.prototype.version = 1001;
+        let hero = new Hero("Bruce", "Wayne", "Gotham");
+        console.log(hero.firstname, hero.lastname, hero.city, hero.age, hero.power);
+        hero.power = 10;
+        console.log(hero.firstname, hero.lastname, hero.city, hero.age, hero.power);
+        console.log(hero.fullname(), Hero.version);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

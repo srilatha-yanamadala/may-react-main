@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background-color: slategray;
+        border: 1px solid darkslategray;
+        margin: auto;
+        overflow: auto;
+      }
+      #container div {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+        border: 1px solid maroon;
+        margin: 5px;
+        float: left;
+        font-size: 40px;
+        line-height: 100px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", init);
+      var container ;
+
+      function init() {
+        container = document.querySelector("#container");
+        document.querySelectorAll("button")[0].addEventListener("click", addbox);
+        document.querySelectorAll("button")[1].addEventListener("click", removeFirstBox);
+        document.querySelectorAll("button")[2].addEventListener("click", removeLastBox);
+      }
+
+      function addbox() {
+        var count = container.children.length+1;
+        container.innerHTML += "<div onclick='removefun(this)'>"+count+"</div>";
+      }
+
+      function removeFirstBox() {
+        var box = container.firstChild;
+        if(box){
+            container.removeChild(box);
+        }else{
+            alert("nothing to remove");
+        }
+      }
+      
+      function removeLastBox() {
+        var box = container.lastChild;
+        if(box){
+            container.removeChild(box);
+        }else{
+            alert("nothing to remove");
+        }
+      }
+
+      function removefun(elm){
+        if(elm){
+            container.removeChild(elm);
+        }else{
+            alert("nothing to remove");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <hr />
+    <div id="container"></div>
+  </body>
+</html>

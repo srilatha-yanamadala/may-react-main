@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* let Hero = function(fun1, fun2){
+            return function(num){
+                let power = fun1( fun2( num ) )
+                return power
+            }
+        };
+        function firstfun( num ){
+            return num + num;
+        }
+        function secondfun( num ){
+            return num * num;
+        }
+        let hero = Hero(firstfun, secondfun);
+
+        console.log(hero(5)); */
+
+
+        let promise = new Promise(function( resolve, reject ){
+            setTimeout(function(){
+                if( true ){
+                    resolve("Success Data");
+                }else{
+                    reject("Error Message");
+                }
+            }, 2000)
+        });// 
+
+        promise
+        .then(function(data){
+            console.log("Resolve : ", data);
+            return data.toUpperCase();
+        })
+        .then(function(data){
+            console.log("Second Then : ", data);
+            return data.toLowerCase();
+        })
+        .then(function(data){
+            console.log("Third Then : ", data);
+        })
+        .catch(function(error){
+            console.log("Reject : ", error);
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

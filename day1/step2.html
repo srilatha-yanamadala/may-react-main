@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // document.getElementsByTagName("button")[0]
+            // .addEventListener("click", clickHandler);
+
+            // document.getElementsByTagName("button")[1]
+            // .addEventListener("click", clickHandler);
+
+            // document.querySelector("button").addEventListener("click", clickHandler);
+            document.querySelectorAll("button")[0].addEventListener("click", clickHandler1);
+            document.querySelectorAll("button")[1].addEventListener("click", clickHandler2);
+        }
+        function clickHandler1(){
+            document.querySelector(".container").innerHTML += "Button was clicked <br/>"
+        }
+        function clickHandler2(){
+            document.querySelectorAll("button")[0].removeEventListener("click", clickHandler1);
+        }
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+    <button>Stop Clicking the button</button>
+    <div class="container"></div>
+</body>
+</html>

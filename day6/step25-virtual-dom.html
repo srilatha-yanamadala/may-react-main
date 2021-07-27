@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let ulist = document.createElement("ul");
+        let listItem1 = document.createElement("li");
+            listItem1.textContent = "List Item 1";
+            ulist.appendChild(listItem1);
+        let listItem2 = document.createElement("li");
+            listItem2.textContent = "List Item 2";
+            ulist.appendChild(listItem2);
+        let listItem3 = document.createElement("li");
+            listItem3.textContent = "List Item 6";
+            ulist.appendChild(listItem3);
+        let listItem4 = document.createElement("li");
+            listItem4.textContent = "List Item 4";
+            ulist.appendChild(listItem4);
+        let listItem5 = document.createElement("li");
+            listItem5.textContent = "List Item 5";
+            ulist.appendChild(listItem5);
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("root").appendChild(ulist);
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

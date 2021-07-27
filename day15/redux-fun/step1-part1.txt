@@ -1,0 +1,49 @@
+const redux = require("redux");
+const createStore = redux.createStore;
+
+// action
+const ADD_HERO = "ADD_HERO";
+
+// action creator
+function addHero(){
+    return {
+        type : ADD_HERO,
+        info : "First Redux Info"
+    }
+}
+
+// default / inital state
+const initalState = {
+    numberOfHeroes : 0
+}
+
+// reducer
+const reducer = (state = initalState, action) => {
+    switch(action.type){
+        case ADD_HERO : return {
+            numberOfHeroes : state.numberOfHeroes + 1
+        }
+        default : return state
+    }
+}
+
+// store
+const store = createStore( reducer );
+
+// console.log(store.getState());
+
+// subscribe
+const unsubscibe = store.subscribe( ()=>{
+    console.log(store.getState());
+});
+
+store.dispatch( addHero() );
+store.dispatch( addHero() );
+store.dispatch( addHero() );
+store.dispatch( addHero() );
+// unsubscibe
+unsubscibe();
+console.log("unsubscribed");
+store.dispatch( addHero() );
+store.dispatch( addHero() );
+

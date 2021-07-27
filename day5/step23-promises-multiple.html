@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Promises</title>
+    <script>
+       let asyncCallOne = function(){
+           let promise = new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   if(true){
+                       resolve(" Resolve Data from Async Call One ");
+                   }else{
+                       reject(" Reject Message  from Async Call One ")
+                   }
+               }, 1000)
+           });
+           return promise;
+       };
+
+       let asyncCallTwo = function(){
+           let promise = new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   if(true){
+                        resolve(" Resolve Data from Async Call Two ");
+                   }else{
+                       reject(" Reject Message from Async Call Two ")
+                   }
+               }, 2000)
+           });
+           return promise;
+       };
+
+       let asyncCallThree = function(){
+           let promise = new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   if(false){
+                        resolve(" Resolve Data from Async Call Three ");
+                   }else{
+                       reject(" Reject Message from Async Call Three ")
+                   }
+               }, 3000)
+           });
+           return promise;
+       };
+/* 
+      Promise.all([asyncCallOne(),asyncCallTwo(), asyncCallThree()])
+      .then( res => console.log(res) )
+      .catch( error => console.log(error) ) */
+
+/*    Promise.any([asyncCallOne(),asyncCallTwo(), asyncCallThree()])
+      .then( res => console.log(res) )
+      .catch( error => console.log(error) ) */
+
+
+      Promise.race([asyncCallOne(),asyncCallTwo(), asyncCallThree()])
+      .then( res => console.log(res) )
+      .catch( error => console.log(error) )
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

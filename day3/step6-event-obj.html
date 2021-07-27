@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+        function init(){
+            var buttons = document.querySelectorAll("button");
+            for(var i = 0; i < buttons.length; i++){
+                buttons[i].addEventListener("click", clickHandler);
+                buttons[i].addEventListener("mouseover", clickHandler);
+                buttons[i].addEventListener("mouseup", clickHandler);
+                buttons[i].addEventListener("mousedown", clickHandler);
+                buttons[i].addEventListener("mouseout", clickHandler);
+                // buttons[i].addEventListener("mousemove", clickHandler);
+            }
+        }
+
+        function clickHandler(evt){
+           // alert(evt.target.getAttribute("data-sku"));
+           document.getElementById("log").innerHTML += "<p>"+evt.type+" on : "+evt.target.getAttribute("data-sku")+"</p>"
+        }
+    </script>
+</head>
+<body>
+    <button data-sku="product number 001"> Click Me 1 </button>
+    <button data-sku="product number 002"> Click Me 2 </button>
+    <button data-sku="product number 003"> Click Me 3 </button>
+    <button data-sku="product number 004"> Click Me 4 </button>
+    <button data-sku="product number 005"> Click Me 5 </button>
+    <hr>
+    <div id="log"></div>
+</body>
+</html>

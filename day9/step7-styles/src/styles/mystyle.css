@@ -1,0 +1,17 @@
+.paraStyle{
+    color : darkslateblue;
+    background-color : cornsilk;
+    padding : 10px;
+    font-family : Arial, Helvetica, sans-serif;
+    text-align : justify;
+  }
+.box{
+   width: 400px;
+   background-color: darkslategray;
+   color: aliceblue;
+   font-weight: bold;
+   padding: 10px;
+   border : 2px solid grey;
+   margin: 10px auto;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }

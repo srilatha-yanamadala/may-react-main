@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+    <script>
+        var herolist = [
+            { 
+                title : "Batman",
+                power : 7,
+                city : "Gotham"
+            },
+            { 
+                title : "Ironman",
+                power : 6,
+                city : "New York"
+            },
+            { 
+                title : "Superman",
+                power : 10,
+                city : "Metropolis"
+            }
+        ];
+        function checkPower(){
+            for(let i = 0; i < herolist.length ; i++ ){
+                if( herolist[i].power > 6){
+                    const tempTitle = herolist[i].title;
+                    herolist[i].title = tempTitle+" is Strong";
+                }
+            }
+            // console.log(tempTitle);// 
+            // console.log(i);// 
+        };
+
+        checkPower();
+        // console.log(herolist);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

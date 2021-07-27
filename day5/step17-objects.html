@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <script>
+        let person = Object.create(null);
+            Object.defineProperty(person,"city",{
+                value : "Bengaluru"
+            });
+
+        let hero = Object.create(person);
+        // console.log(hero.city);
+/*         Object.defineProperty(hero,"firstname",{
+            value : "Bruce",
+            enumerable : true
+        });
+        Object.defineProperty(hero,"lastname",{
+            value : "Wayne"
+        });
+        Object.defineProperty(hero,"power",{
+            value : 7,
+            writable : true,
+            enumerable : true,
+            configurable : true
+        }); */
+        Object.defineProperties(hero,{
+            firstname : {
+                value : "Bruce",
+                enumerable : true
+            },
+            lastname : {
+                value : "Wayne"
+            },
+            power : {
+                value : 7,
+                writable : true,
+                enumerable : true,
+                configurable : true
+            },
+            powerAccess : {
+                get : function(){ return this.power },
+                set : function( npower ){ this.power = npower }
+            }
+        });
+        console.log(hero.power);
+        console.log(hero.powerAccess);
+        hero.powerAccess = 10;
+        console.log(hero.powerAccess);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

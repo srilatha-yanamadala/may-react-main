@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: darkslategrey;
+            margin: auto;
+            padding: 5px;
+            overflow: auto;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: coral;
+            border: 1px solid transparent;
+            margin: 5px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var container;
+        window.onload = function(){
+            container = document.querySelector(".container");
+            document.querySelectorAll("button")[0]
+            .addEventListener("click", addBoxHandler);
+
+            document.querySelectorAll("button")[1]
+            .addEventListener("click", removeBoxHandler);
+
+            document.querySelectorAll("button")[2]
+            .addEventListener("click", removeLastBoxHandler);
+        }
+        function addBoxHandler(){
+            var box = document.createElement("div");
+                box.innerText = "Box"+count;
+                box.setAttribute("class", "box");
+                box.setAttribute("onclick", "deleteFun(this)");
+            container.appendChild(box);
+            count++;
+        }
+        function removeBoxHandler(){
+            var box = container.firstChild;
+            if(box){
+            container.removeChild(box);
+            count--;
+            }
+        }
+        function removeLastBoxHandler(){
+            var box = container.lastChild;
+            if(box){
+            container.removeChild(box);
+            count--;
+            }
+        }
+        function deleteFun(elm){
+            if(elm){
+            container.removeChild(elm);
+            count--;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>Create Box</button>
+    <button>Delete First Box</button>
+    <button>Delete Last Box</button>
+    <div class="container"></div>
+</body>
+</html>

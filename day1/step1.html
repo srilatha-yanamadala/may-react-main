@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = function(){
+        //     // console.log( document.getElementsByTagName("li")[0].childNodes.length )
+        //     // console.log( document.getElementsByTagName("ul")[0].children.length )
+        //     // console.log( document.getElementsByTagName("li")[0].textContent );
+        //     // console.log( document.body.children[1].tagName );
+        //     console.log(document.querySelector("ul").children.length)
+        // }
+        function init(){
+            console.log(document.querySelector("ul").children.length);
+        };
+        // window.onload = init;
+        // window.addEventListener("load", init);
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <h1> Welcome to your life </h1>
+    <ul>
+        <li>List <span>item</span> 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+</body>
+</html>

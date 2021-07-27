@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let ironman = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(){
+                return this.firstname+" "+this.lastname;
+            }
+        };
+        let spiderman = {
+            title : "Spiderman",
+            firstname : "Peter",
+            lastname : "Parker"
+        };
+        let hulk = {
+            title : "Hulk",
+            firstname : "Bruce",
+            lastname : "Benner"
+        };
+
+        console.log(ironman.title, ironman.fullname());
+        // console.log(spiderman.title, ironman.fullname.call(spiderman));
+        // console.log(spiderman.title, ironman.fullname.apply(spiderman));
+        console.log(spiderman.title, ironman.fullname.bind(spiderman)());
+        console.log(hulk.title, ironman.fullname.bind(hulk)());
+
+    </script>
+</head>
+<body>
+    <h1>Call Apply Bind</h1>
+
+</body>
+</html>

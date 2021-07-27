@@ -1,0 +1,8 @@
+.box label{
+    width: 200px;
+    display: block;
+}
+.box button{
+    margin-top: 10px;
+    width: 100px;
+}

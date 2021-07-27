@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        let hero1 = {
+            title : "Batman",
+            power : 7,
+            city : "Gotham"
+        };
+
+/*      
+        let ht = hero1.title;
+        let hp = hero1.power;
+        let hc = hero1.city; 
+*/
+/*         let ht = hero1.title, 
+            hp = hero1.power, 
+            hc = hero1.city; */
+
+ //        let { title : ht, power : hp, city : hc } = hero1;
+
+           let { title, power, city} = hero1;
+
+            // ht = ht.toUpperCase();
+            // hp = hp * 2;
+
+        // let upperHero = hero1;
+        document.addEventListener("DOMContentLoaded", function(){
+           /*  
+            upperHero.title = upperHero.title.toUpperCase();
+            upperHero.power = upperHero.power * 2;
+            document.getElementById("ht").innerText = upperHero.title;
+            document.getElementById("hp").innerText = upperHero.power;
+            document.getElementById("hc").innerText = upperHero.city;
+            console.log(hero1.power);// 
+            console.log(hero1.title);// 
+            console.log(hero1.city);//  */
+
+            document.getElementById("ht").innerText = title;
+            document.getElementById("hp").innerText = power;
+            document.getElementById("hc").innerText = city;
+
+            console.log(hero1.power);// 
+            console.log(hero1.title);// 
+            console.log(hero1.city);//
+        })
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Title : <span id="ht"></span></li>
+        <li>Power : <span id="hp"></span></li>
+        <li>City : <span id="hc"></span></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class FirstComp extends Component{
+  constructor(){
+    super();
+    this.state = { power : 0 };
+
+    // this.increasePower = this.increasePower.bind(this);
+    // this.decreasePower = this.decreasePower.bind(this);
+  }
+
+  increasePower = () => {
+    this.setState({
+      power : this.state.power += 1
+    })
+  }
+  decreasePower = () => {
+    this.setState({
+      power : this.state.power -= 1
+    })
+  }
+
+  render(){
+    return <div>
+            <h1> First Component </h1>
+            <hr/>
+            <h2>Power value is : { this.state.power }</h2>
+            {/* <button onClick={ this.increasePower.bind(this) }>Increase Power</button>
+            <button onClick={ this.decreasePower.bind(this) }>Decrease Power</button> */}
+            <button onClick={ this.increasePower }>Increase Power</button>
+            <br/>
+            <button onClick={ this.increasePower }>Increase Power</button>
+            <br/>
+            <button onClick={ this.increasePower }>Increase Power</button>
+            <br/>
+            <button onClick={ this.decreasePower }>Decrease Power</button>
+          </div>
+  }
+}
+ReactDOM.render(<FirstComp/>, document.getElementById('root'));
